@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f6f7fb"><meta name="description" content="Convert documents in your browser. Convert PDF, DOCX, TXT, Markdown, HTML and CSV files without uploading them.">
+<title>Document Converter — Convert files privately</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+<script defer src="https://unpkg.com/docx@8.5.0/build/index.umd.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script defer src="assets/js/app.js"></script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="./"><span class="brand-mark">D</span><span>Document<span class="brand-light">Converter</span></span></a><nav><a href="#how-it-works">How it works</a><a href="#formats">Supported formats</a><button id="themeToggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">◐</button></nav></header>
+<main>
+<section class="hero"><div class="eyebrow"><span class="dot"></span> PRIVATE BY DESIGN · NO SIGN-UP</div><h1>Documents, <span>converted.</span></h1><p class="hero-copy">Convert common document formats right in your browser. Your files stay on your device — nothing gets uploaded.</p></section>
+<section class="workspace">
+<div class="panel">
+<div class="panel-heading"><div><h2>Convert your files</h2><p>Choose one or more documents to get started.</p></div><span class="secure"><span>✓</span> On-device</span></div>
+<div id="dropZone" class="drop-zone" tabindex="0" role="button" aria-label="Choose files or drop them here"><div class="upload-icon">↑</div><strong>Drop files here</strong><span>or <button id="browseBtn" class="text-btn" type="button">browse your device</button></span><small>PDF, DOCX, DOC, TXT, MD, HTML, CSV · Up to 25 MB per file</small><input id="fileInput" type="file" accept=".pdf,.docx,.doc,.txt,.md,.markdown,.html,.htm,.csv,text/plain,text/markdown,text/html,text/csv,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" multiple hidden></div>
+<div id="fileSection" class="file-section" hidden><div class="section-label"><span>Selected files</span><button id="clearBtn" class="text-btn" type="button">Clear all</button></div><div id="fileList" class="file-list"></div></div>
+<div class="convert-controls"><label for="outputFormat">Convert to</label><div class="control-row"><div class="select-wrap"><select id="outputFormat"><option value="pdf">PDF document (.pdf)</option><option value="docx">Word document (.docx)</option><option value="txt">Plain text (.txt)</option><option value="html">HTML page (.html)</option><option value="md">Markdown (.md)</option></select></div><button id="convertBtn" class="primary-btn" disabled>Convert files <span>→</span></button></div><p class="hint">Each file is converted separately. Download files individually or together as a ZIP.</p></div>
+<div id="status" class="status" role="status" aria-live="polite" hidden></div>
+<div id="results" class="results" hidden><div class="section-label"><span>Ready to download</span><button id="downloadZipBtn" class="text-btn" type="button">Download all (.zip)</button></div><div id="resultList" class="file-list"></div></div>
+</div>
+<div class="trust-row"><div><span class="trust-icon">⌁</span><span><b>Files stay local</b><small>Processing happens in your browser</small></span></div><div><span class="trust-icon">✧</span><span><b>No account needed</b><small>Open the tool and start converting</small></span></div><div><span class="trust-icon">⌑</span><span><b>Batch conversion</b><small>Convert multiple files at once</small></span></div></div>
+</section>
+<section id="how-it-works" class="info-section"><div class="section-kicker">SIMPLE WORKFLOW</div><h2>Three steps. That's it.</h2><div class="steps"><article><span>01</span><h3>Add your documents</h3><p>Select files or drag and drop them into the upload area.</p></article><article><span>02</span><h3>Choose an output</h3><p>Pick PDF, Word, plain text, HTML or Markdown.</p></article><article><span>03</span><h3>Download</h3><p>Save converted files one by one or download them together.</p></article></div></section>
+<section id="formats" class="formats-section"><div class="section-kicker">FORMAT SUPPORT</div><h2>Common formats, covered.</h2><div class="format-grid"><div><b>PDF</b><span>Read text and export</span></div><div><b>DOCX / DOC</b><span>Extract and convert</span></div><div><b>TXT</b><span>Plain text conversion</span></div><div><b>MD</b><span>Markdown conversion</span></div><div><b>HTML</b><span>Web document conversion</span></div><div><b>CSV</b><span>Text and table content</span></div></div><p class="format-note">Legacy .doc files are accepted only when the browser can read them as text; for reliable results, save them as .docx first. Scanned PDFs and image-only documents require OCR, which is not included.</p></section>
+</main>
+<footer><a class="brand footer-brand" href="./"><span class="brand-mark">D</span><span>Document<span class="brand-light">Converter</span></span></a><p>Free document conversion. Your files are processed locally.</p><span>© <span id="year"></span> Document Converter</span></footer>
+</body></html>
